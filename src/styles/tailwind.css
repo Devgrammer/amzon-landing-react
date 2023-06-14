@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.bg-amazon_blue {
+  background-color: #131921;
+}
+.bg-amazon_mini_blue {
+  background-color: #232f3e;
+}
+.bg-amazon_yellow {
+  background-color: #febd69;
+}
