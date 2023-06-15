@@ -13,9 +13,8 @@ const Pagination = ({
     {
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(
-          <div className="flex w-full m-4 ">
+          <div className="flex w-full m-4 " key={i}>
             <div
-              key={i}
               className={`pagination__item w-8 h-8 bg-gray-300  text-center flex rounded-sm justify-center items-center ${
                 currentPage === i ? "active" : ""
               }`}
@@ -43,7 +42,7 @@ const Pagination = ({
       <ul className="pagination flex">{renderPageNumbers()}</ul>
       <button
         className="w-8 h-8 bg-gray-300  text-center flex rounded-sm justify-center items-center"
-        disabled={currentPage > totalPages / 12 ? true : false}
+        disabled={currentPage > totalPages-1? true : false}
         onClick={() => setCurrentPage(currentPage - 1)}
       >
         <AiOutlineRight />

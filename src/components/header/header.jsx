@@ -62,16 +62,17 @@ const Header = ({ searchResults, searchTerm, setSearchTerm }) => {
               India
             </span>
           </div>
-          <div className="flex items-center rounded-md overflow-hidden ml-4 bg-white flex-grow">
-            <select className=" border-none bg-gray-200 focus:outline-none">
-              <option value="all">All</option>
+          <div className="flex items-center p-0 rounded-md overflow-hidden bg-white ml-4 b flex-grow">
+            <select className=" border-none pl-2 border-gray-400 bg-white focus:outline-none">
+              <option value="">All</option>
               <option value="electronics">Electronics</option>
               <option value="books">Books</option>
-              <option value="clothing">Clothing</option>
+              <option value="men's clothing">Men's Clothing</option>
+              <option value="women's clothing">Women's Clothing</option>
             </select>
             <input
               type="text"
-              className="px-2 border-none w-full focus:outline-none"
+              className="px-2 border-none w-full bg-white focus:outline-none"
               placeholder="Search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
