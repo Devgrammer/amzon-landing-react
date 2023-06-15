@@ -22,7 +22,7 @@ const App = () => {
   const [maxPrice, setMaxPrice] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const productsPerPage = 12;
-  const totalPages = Math.ceil(products.length / productsPerPage);
+ 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
@@ -46,6 +46,7 @@ const App = () => {
       (minPrice === "" || product.price >= parseInt(minPrice)) &&
       (maxPrice === "" || product.price <= parseInt(maxPrice))
   );
+   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   const handleFilterChange = (category) => {
     setSelectedCategory(category);
@@ -88,7 +89,7 @@ const App = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {currentProducts.length !== 0 &&
-            filteredProducts.map((product) => (
+            filteredProducts.splice((currentPage*12-12), (currentPage*productsPerPage)).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
 
